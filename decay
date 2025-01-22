@@ -1,0 +1,21 @@
+import numpy as np
+import matplotlib.pyplot as mpl
+
+#define constant
+T=60 #half life
+N0=100 
+L=0.693/T #devay constant (lambda)
+
+
+def N(t):
+    return N0*np.exp(-L*t)
+t=np.linspace(0,1000,1000)
+
+mpl.title('Radioactive Decay Law')
+mpl.xlabel('t')
+mpl.ylabel('N(t)')
+mpl.plot(t,N(t), label=f'N(t)={N0}*exp(-L*t)')
+mpl.xlim(0,1000)
+mpl.grid(True)
+mpl.legend()
+mpl.show()
